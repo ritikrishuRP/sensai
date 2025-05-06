@@ -6,8 +6,10 @@ import { ChevronDown, FileText, GraduationCap, LayoutDashboard, PenBox, StarsIco
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useTheme } from 'next-themes';
+import { checkUser } from '@/lib/checkUser';
 
-const Header = () => {
+const Header = async () => {
+  await checkUser();
   return (
     <div>
         <header className='fixed top-0 w-full z-50 border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60'>
